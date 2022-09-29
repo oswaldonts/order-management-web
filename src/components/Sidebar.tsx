@@ -17,7 +17,7 @@ function Sidebar() {
             <i className="fas fa-bars"></i>
           </button>
           <a
-            className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+            className="md:block text-left md:pb-2 text-slate-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             href="../../index.html"
           >
             Order Management App
@@ -32,9 +32,9 @@ function Sidebar() {
               <li className="items-center">
                 <Link to="/orders">
                   <div
-                    className="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                    className="text-xs uppercase py-3 font-bold block text-slate-500 hover:text-slate-700"
                   >
-                    <i className="fas fa-tv mr-2 text-sm text-blueGray-300"></i>
+                    <i className="fas fa-tv mr-2 text-sm text-slate-300"></i>
                     Orders
                   </div>
                 </Link>
@@ -43,9 +43,9 @@ function Sidebar() {
               <li className="items-center">
                 <Link to="/products">
                   <div
-                    className="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
+                    className="text-xs uppercase py-3 font-bold block text-slate-500 hover:text-slate-700"
                   >
-                    <i className="fas fa-tools mr-2 text-sm text-blueGray-300"></i>
+                    <i className="fas fa-tools mr-2 text-sm text-slate-300"></i>
                     Products
                   </div>
                 </Link>

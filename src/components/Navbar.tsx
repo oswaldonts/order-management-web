@@ -19,7 +19,7 @@ function Navbar() {
             className="flex-col md:flex-row list-none items-center hidden md:flex"
           >
             <span
-              className="w-12 h-12 text-sm text-white bg-blueGray-200 items-center justify-center"
+              className="w-12 h-12 text-sm text-white items-center justify-center"
             ></span>
           </ul>
         </div>
