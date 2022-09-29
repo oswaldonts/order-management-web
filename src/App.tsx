@@ -8,29 +8,30 @@ import { IState } from './types';
 import './App.css'
 
 function App() {
-  const [products, setProducts] = useState<IState["products"]>([]);
-  const [orders, setOrders] = useState<IState["orders"]>([]);
+  const [products, setProducts] = useState<IState["products"]>();
+  const [orders, setOrders] = useState<IState["orders"]>();
 
   useEffect(() => {
     (async () => {
       const apiUrl = 'https://heroku-order-management-api.herokuapp.com/api';
+      const paginationSize = 10;
 
       const products =
-        await axios.get(`${apiUrl}/products`)
+        await axios.get(`${apiUrl}/products?size=${paginationSize}`)
           .then(res => res.data)
           .catch(error => {
             console.log(error);
 
-            alert("data could not be loaded")
+            alert("products could not be loaded")
           });
 
       const orders =
-        await axios.get(`${apiUrl}/orders`)
+        await axios.get(`${apiUrl}/orders?size=${paginationSize}`)
           .then(res => res.data)
           .catch(error => {
             console.log(error);
 
-            alert("data could not be loaded")
+            alert("orders could not be loaded")
           });
 
       setProducts(products);
@@ -44,8 +45,8 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/products' element={<Products products={products} />} />
-            <Route path='/orders' element={<Orders orders={orders} />} />
+            <Route path='/products' element={<Products products={products?.content} />} />
+            <Route path='/orders' element={<Orders orders={orders?.content} />} />
           </Routes>
         </BrowserRouter>
       {/* </Provider> */}

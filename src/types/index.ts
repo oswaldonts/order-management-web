@@ -1,6 +1,18 @@
 export interface IState {
-  products: Product[],
-  orders: Order[]
+  products: {
+    content: Product[],
+    pageable: {
+      pageNumber: number
+    },
+    totalPages: number
+  },
+  orders: {
+    content: Order[],
+    pageable: {
+      pageNumber: number
+    },
+    totalPages: number
+  }
 }
 
 export type Product = {
