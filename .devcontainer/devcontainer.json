@@ -23,5 +23,23 @@
 	"features": {
 		"github-cli": "latest",
 		"node": "latest"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"eamodio.gitlens",
+				"EditorConfig.EditorConfig",
+				"dsznajder.es7-react-js-snippets",
+				"esbenp.prettier-vscode",
+				"formulahendry.auto-rename-tag",
+				"dbaeumer.vscode-eslint",
+				"christian-kohler.npm-intellisense",
+				"infeng.vscode-react-typescript",
+				"bradlc.vscode-tailwindcss",
+				"christian-kohler.path-intellisense",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"wix.vscode-import-cost"
+			]
+		}
 	}
 }
