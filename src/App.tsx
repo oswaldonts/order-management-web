@@ -1,25 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home'
+import Products from './pages/Products'
+import Orders from './pages/Orders'
+import { IState } from './types';
+import './App.css'
 
 function App() {
+  const [products, setProducts] = useState<IState["products"]>([]);
+  const [orders, setOrders] = useState<IState["orders"]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const apiUrl = 'https://heroku-order-management-api.herokuapp.com/api';
+
+      const products =
+        await axios.get(`${apiUrl}/products`)
+          .then(res => res.data)
+          .catch(error => {
+            console.log(error);
+
+            alert("data could not be loaded")
+          });
+
+      const orders =
+        await axios.get(`${apiUrl}/orders`)
+          .then(res => res.data)
+          .catch(error => {
+            console.log(error);
+
+            alert("data could not be loaded")
+          });
+
+      setProducts(products);
+      setOrders(orders);
+    })();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {/* <Provider store={store} > */}
+      <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/products' element={<Products products={products} />} />
+            <Route path='/orders' element={<Orders orders={orders} />} />
+          </Routes>
+        </BrowserRouter>
+      {/* </Provider> */}
+    </>
   );
 }
 
