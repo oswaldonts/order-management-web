@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Order Management Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a project to show information from orders and products.
+
+To open the project use the following link [heroku-order-management-web.herokuapp.com](https://heroku-order-management-web.herokuapp.com).
+
+This app worked together with [Order Management API](https://github.com/oswalthz/order-management-api).
 
 ## Available Scripts
 
